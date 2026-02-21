@@ -1,9 +1,29 @@
+import { useState, useEffect } from 'react';
+import { EditableSection } from '@/components/EditableSection';
+import { contentAPI } from '@/services/api';
 import readyToGrowImage from '@/assets/shared/shared-003-ready-to-grow.png';
 
 export function ReadyToGrowSection() {
+  const [buttonText, setButtonText] = useState('Contact Us');
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const loadContent = async () => {
+      try {
+        const content = await contentAPI.getPageContent('home');
+        const btn = content.find((c: any) => c.section === 'ready-to-grow' && c.key === 'buttonText');
+        if (btn) setButtonText(btn.value);
+      } catch (error) {
+        console.log('Using default content');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    loadContent();
+  }, []);
+
   const handleButtonClick = () => {
-    // Add your button click handler here
-    console.log('Book a Free Branding & PR Consultation clicked');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -20,7 +40,7 @@ export function ReadyToGrowSection() {
           onClick={handleButtonClick}
           className="bg-[#4A5FD9] hover:bg-[#3A4FC9] text-white font-semibold px-8 py-3 rounded-lg text-base md:text-lg transition-colors shadow-lg"
         >
-          Book a Free Branding & PR Consultation
+          {buttonText}
         </button>
       </div>
     </section>

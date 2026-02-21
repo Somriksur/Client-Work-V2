@@ -4,7 +4,7 @@ import { contentAPI } from '@/services/api';
 import readyToLaunchImage from '@/assets/services/shopify/shopify-010-ready-to-launch.png';
 
 export function ReadyToLaunchSection() {
-  const [buttonText, setButtonText] = useState('Book a Free Shopify Consultation');
+  const [buttonText, setButtonText] = useState('Contact Us');
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export function ReadyToLaunchSection() {
   }, []);
 
   const handleButtonClick = () => {
-    console.log('Book a Free Shopify Consultation clicked');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   if (isLoading) {

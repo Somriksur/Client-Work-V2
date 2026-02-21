@@ -4,7 +4,7 @@ import { contentAPI } from '@/services/api';
 import readyToGrowImage from '@/assets/shared/shared-003-ready-to-grow.png';
 
 export function ReadyToGrowSection() {
-  const [buttonText, setButtonText] = useState('Book a Free Meta Ads Consultation');
+  const [buttonText, setButtonText] = useState('Contact Us');
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export function ReadyToGrowSection() {
   }, []);
 
   const handleButtonClick = () => {
-    console.log('Book a Free Meta Ads Consultation clicked');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   if (isLoading) {

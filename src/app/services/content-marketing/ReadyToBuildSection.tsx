@@ -4,7 +4,7 @@ import { contentAPI } from '@/services/api';
 import readyToBuildImage from '@/assets/services/content-marketing/content-marketing-011-ready-to-build.png';
 
 export function ReadyToBuildSection() {
-  const [buttonText, setButtonText] = useState('Book a Free Content Marketing Consultation');
+  const [buttonText, setButtonText] = useState('Contact Us');
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export function ReadyToBuildSection() {
   }, []);
 
   const handleButtonClick = () => {
-    console.log('Book a Free Content Marketing Consultation clicked');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   if (isLoading) {

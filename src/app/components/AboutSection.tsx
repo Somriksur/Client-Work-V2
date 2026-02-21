@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { EditableSection } from '@/components/EditableSection';
 import { contentAPI } from '@/services/api';
-import aboutImage from '@/assets/home/home-002-about.png';
+import aboutImage from '@/assets/home/home-002-about-new.png';
 
 export function AboutSection() {
   const [heading, setHeading] = useState('About Us');
-  const [paragraph1, setParagraph1] = useState('We are a trusted, performance-oriented digital marketing agency known for setting high standards in strategy, execution, and client satisfaction. Our focus is simple: Deliver exceptional results through creativity, innovation, and data-driven decisions.');
+  const [paragraph1, setParagraph1] = useState('We are a digital marketing agency known for setting high standards in strategy, execution, and client satisfaction. Our focus is simple: Deliver exceptional results through creativity, innovation, and data-driven decisions.');
   const [paragraph2, setParagraph2] = useState('As a leading digital marketing agency, we deeply analyze your goals, online presence, and competitors to craft data-driven strategies focused on sustainable business growth.');
   const [isLoading, setIsLoading] = useState(true);
 

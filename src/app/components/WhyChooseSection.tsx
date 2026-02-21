@@ -1,17 +1,16 @@
 import { useState, useEffect } from 'react';
 import { EditableSection } from '@/components/EditableSection';
 import { contentAPI } from '@/services/api';
-import whyChooseImage from '@/assets/home/home-004-why-choose.png';
+import whyChooseImage from '@/assets/home/home-004-why-choose-new.png';
 
 export function WhyChooseSection() {
   const [activeNumber, setActiveNumber] = useState(1);
-  const [reason1, setReason1] = useState('Google Partner Certified');
+  const [reason1, setReason1] = useState('Meta Partner Certified');
   const [reason2, setReason2] = useState('10+ Years Of Proven Experience');
   const [reason3, setReason3] = useState('Revenue-Focused Marketing');
   const [reason4, setReason4] = useState('Custom Strategies, No Templates');
-  const [reason5, setReason5] = useState('Transparent Performance Reporting');
-  const [reason6, setReason6] = useState('Expert-Led Campaign Execution');
-  const [reason7, setReason7] = useState('Results In Competitive Markets');
+  const [reason5, setReason5] = useState('Expert-Led Campaign Execution');
+  const [reason6, setReason6] = useState('Results In Competitive Markets');
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -24,7 +23,6 @@ export function WhyChooseSection() {
         const r4 = content.find((c: any) => c.section === 'why-choose' && c.key === 'reason4');
         const r5 = content.find((c: any) => c.section === 'why-choose' && c.key === 'reason5');
         const r6 = content.find((c: any) => c.section === 'why-choose' && c.key === 'reason6');
-        const r7 = content.find((c: any) => c.section === 'why-choose' && c.key === 'reason7');
         
         if (r1) setReason1(r1.value);
         if (r2) setReason2(r2.value);
@@ -32,7 +30,6 @@ export function WhyChooseSection() {
         if (r4) setReason4(r4.value);
         if (r5) setReason5(r5.value);
         if (r6) setReason6(r6.value);
-        if (r7) setReason7(r7.value);
       } catch (error) {
         console.log('Using default content');
       } finally {
@@ -49,12 +46,11 @@ export function WhyChooseSection() {
     { number: 4, text: reason4 },
     { number: 5, text: reason5 },
     { number: 6, text: reason6 },
-    { number: 7, text: reason7 },
   ];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveNumber((prev) => (prev === 7 ? 1 : prev + 1));
+      setActiveNumber((prev) => (prev === 6 ? 1 : prev + 1));
     }, 2000);
     return () => clearInterval(interval);
   }, []);
@@ -74,8 +70,7 @@ export function WhyChooseSection() {
         { key: 'reason3', label: 'Reason 3', type: 'text', value: reason3 },
         { key: 'reason4', label: 'Reason 4', type: 'text', value: reason4 },
         { key: 'reason5', label: 'Reason 5', type: 'text', value: reason5 },
-        { key: 'reason6', label: 'Reason 6', type: 'text', value: reason6 },
-        { key: 'reason7', label: 'Reason 7', type: 'text', value: reason7 }
+        { key: 'reason6', label: 'Reason 6', type: 'text', value: reason6 }
       ]}
       onSave={(data) => {
         setReason1(data.reason1);
@@ -84,7 +79,6 @@ export function WhyChooseSection() {
         setReason4(data.reason4);
         setReason5(data.reason5);
         setReason6(data.reason6);
-        setReason7(data.reason7);
       }}
     >
       <section className="relative bg-white">

@@ -4,7 +4,7 @@ import { contentAPI } from '@/services/api';
 import readyToTurnImage from '@/assets/services/social-media/social-media-006-ready-to-turn.png';
 
 export function ReadyToTurnSection() {
-  const [buttonText, setButtonText] = useState('Book a Free Social Media Consultation');
+  const [buttonText, setButtonText] = useState('Contact Us');
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export function ReadyToTurnSection() {
   }, []);
 
   const handleButtonClick = () => {
-    console.log('Book a Free Social Media Consultation clicked');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   if (isLoading) {
