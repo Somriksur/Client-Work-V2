@@ -5,7 +5,7 @@ import { UniversalForm } from '@/components/UniversalForm';
 import heroImage from '@/assets/home/home-001-hero-new.png';
 
 export function HeroSection() {
-  const [formHeading, setFormHeading] = useState('Get A Marketing Audit');
+  const [formHeading, setFormHeading] = useState('Talk To Our Expert');
   const [buttonText, setButtonText] = useState('GET STARTED NOW');
   const [isLoading, setIsLoading] = useState(true);
 
@@ -75,8 +75,8 @@ export function HeroSection() {
           />
         </div>
         
-        <div className="absolute top-0 right-0 w-full h-full flex items-center justify-end px-4 sm:px-6 md:px-8 lg:px-16 xl:px-32 pointer-events-none">
-          <div className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-[340px] pointer-events-auto mr-8 sm:mr-12 md:mr-16 lg:mr-20">
+        <div className="absolute top-0 right-0 w-full h-full flex items-start justify-end pt-2 sm:pt-3 md:pt-4 lg:pt-5 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-32 pointer-events-none">
+          <div className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-[340px] pointer-events-auto mr-1 sm:mr-2 md:mr-3 lg:mr-4">
             <UniversalForm 
               formHeading={formHeading}
               buttonText={buttonText}

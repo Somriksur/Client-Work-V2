@@ -49,11 +49,8 @@ export function ServicesSection({ onNavigate }: ServicesSectionProps) {
   ];
 
   const handleLearnMore = (service: typeof services[0]) => {
-    if (service.page && onNavigate) {
-      onNavigate(service.page);
-    } else {
-      console.log(`No page available for ${service.title}`);
-    }
+    // Scroll to top of page where the form is
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (

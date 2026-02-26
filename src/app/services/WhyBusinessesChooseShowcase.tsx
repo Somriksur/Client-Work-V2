@@ -1,4 +1,4 @@
-import whyBusinessesChooseImage from '@/assets/services/build-a-brand/build-a-brand-005-why-businesses-choose.png';
+import whyBusinessesChooseImage from '@/assets/services/build-a-brand/build-a-brand-005-why-businesses-choose-new.png';
 
 export function WhyBusinessesChooseShowcase() {
   return (

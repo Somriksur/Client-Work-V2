@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { EditableSection } from '@/components/EditableSection';
 import { contentAPI } from '@/services/api';
-import whyChooseImage from '@/assets/home/home-004-why-choose-new.png';
+import whyChooseImage from '@/assets/home/home-004-why-choose-final.png';
 
 export function WhyChooseSection() {
   const [activeNumber, setActiveNumber] = useState(1);

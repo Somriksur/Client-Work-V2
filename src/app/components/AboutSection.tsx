@@ -53,16 +53,16 @@ export function AboutSection() {
         <div className="relative">
           <img src={aboutImage} alt="About Us" className="w-full block" />
           
-          <div className="absolute left-[5%] max-w-3xl" style={{ top: '50px' }}>
+          <div className="absolute left-[5%] max-w-xl" style={{ top: '50px' }}>
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-black mb-4 sm:mb-6">
               {heading}
             </h2>
             
-            <p className="text-sm sm:text-base md:text-lg text-black leading-relaxed mb-3">
+            <p className="text-xs sm:text-sm md:text-base text-black leading-relaxed mb-3">
               {paragraph1}
             </p>
             
-            <p className="text-sm sm:text-base md:text-lg text-black leading-relaxed">
+            <p className="text-xs sm:text-sm md:text-base text-black leading-relaxed">
               {paragraph2}
             </p>
           </div>

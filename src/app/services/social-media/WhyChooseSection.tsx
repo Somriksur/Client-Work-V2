@@ -1,4 +1,4 @@
-import whyChooseImage from '@/assets/services/social-media/social-media-004-why-choose.png';
+import whyChooseImage from '@/assets/services/social-media/social-media-004-why-choose-new.png';
 
 export function WhyChooseSection() {
   return (
