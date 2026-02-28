@@ -50,7 +50,7 @@ export function FAQSection() {
         if (fq5) setQ5(fq5.value);
         if (fa5) setA5(fa5.value);
       } catch (error) {
-        console.log('Using default content');
+        // Silently use default content
       } finally {
         setIsLoading(false);
       }
@@ -67,7 +67,7 @@ export function FAQSection() {
   ];
 
   if (isLoading) {
-    return <section className="relative w-full h-96 flex items-center justify-center bg-gray-100"><div className="text-gray-600">Loading...</div></section>;
+    return null;
   }
 
   return (

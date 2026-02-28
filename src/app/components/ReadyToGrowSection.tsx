@@ -15,7 +15,7 @@ export function ReadyToGrowSection() {
         const btn = content.find((c: any) => c.section === 'ready-to-grow' && c.key === 'buttonText');
         if (btn) setButtonText(btn.value);
       } catch (error) {
-        console.log('Using default content');
+        // Silently use default content
       } finally {
         setIsLoading(false);
       }

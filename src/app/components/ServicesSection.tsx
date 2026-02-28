@@ -155,8 +155,103 @@ export function ServicesSection({ onNavigate }: ServicesSectionProps) {
       </div>
       
       {/* Mobile Services Image */}
-      <div className="block md:hidden">
+      <div className="block md:hidden relative">
         <img src={servicesImageMobile} alt="Our Services" className="w-full block" />
+        
+        {/* Service Cards Overlay for Mobile */}
+        <div className="absolute inset-0">
+          {/* Row 1 - Top 4 cards */}
+          <div className="absolute top-[15%] left-[5%] right-[5%] h-[38%] grid grid-cols-2 gap-[3%]">
+            {/* SEO */}
+            <div className="relative">
+              <button
+                onClick={() => handleLearnMore(services[0])}
+                className="absolute bottom-[5%] left-[8%] bg-white text-gray-900 px-2 py-1 rounded text-[8px] font-semibold hover:bg-gray-100 transition-colors"
+              >
+                LEARN MORE →
+              </button>
+            </div>
+            
+            {/* Google Ads */}
+            <div className="relative">
+              <button
+                onClick={() => handleLearnMore(services[1])}
+                className="absolute bottom-[5%] left-[8%] bg-white text-gray-900 px-2 py-1 rounded text-[8px] font-semibold hover:bg-gray-100 transition-colors"
+              >
+                LEARN MORE →
+              </button>
+            </div>
+          </div>
+          
+          {/* Row 2 */}
+          <div className="absolute top-[40%] left-[5%] right-[5%] h-[18%] grid grid-cols-2 gap-[3%]">
+            {/* Meta Ads */}
+            <div className="relative">
+              <button
+                onClick={() => handleLearnMore(services[2])}
+                className="absolute bottom-[8%] left-[8%] bg-white text-gray-900 px-2 py-1 rounded text-[8px] font-semibold hover:bg-gray-100 transition-colors"
+              >
+                LEARN MORE →
+              </button>
+            </div>
+            
+            {/* Social Media Marketing */}
+            <div className="relative">
+              <button
+                onClick={() => handleLearnMore(services[3])}
+                className="absolute bottom-[8%] left-[8%] bg-white text-gray-900 px-2 py-1 rounded text-[8px] font-semibold hover:bg-gray-100 transition-colors"
+              >
+                LEARN MORE →
+              </button>
+            </div>
+          </div>
+          
+          {/* Row 3 */}
+          <div className="absolute top-[60%] left-[5%] right-[5%] h-[18%] grid grid-cols-2 gap-[3%]">
+            {/* Website Design & Development */}
+            <div className="relative">
+              <button
+                onClick={() => handleLearnMore(services[4])}
+                className="absolute bottom-[8%] left-[8%] bg-white text-gray-900 px-2 py-1 rounded text-[8px] font-semibold hover:bg-gray-100 transition-colors"
+              >
+                LEARN MORE →
+              </button>
+            </div>
+            
+            {/* Shopify Development */}
+            <div className="relative">
+              <button
+                onClick={() => handleLearnMore(services[5])}
+                className="absolute bottom-[8%] left-[8%] bg-white text-gray-900 px-2 py-1 rounded text-[8px] font-semibold hover:bg-gray-100 transition-colors"
+              >
+                LEARN MORE →
+              </button>
+            </div>
+          </div>
+          
+          {/* Row 4 - Bottom 2 cards */}
+          <div className="absolute bottom-[8%] left-[5%] right-[5%] h-[18%] grid grid-cols-2 gap-[3%]">
+            {/* Content Marketing */}
+            <div className="relative">
+              <button
+                onClick={() => handleLearnMore(services[6])}
+                className="absolute bottom-[8%] left-[8%] bg-white text-gray-900 px-2 py-1 rounded text-[8px] font-semibold hover:bg-gray-100 transition-colors"
+              >
+                LEARN MORE →
+              </button>
+            </div>
+            
+            {/* Branding & Digital PR */}
+            <div className="relative">
+              <button
+                onClick={() => handleLearnMore(services[7])}
+                className="absolute bottom-[8%] left-[8%] bg-white text-gray-900 px-2 py-1 rounded text-[8px] font-semibold hover:bg-gray-100 transition-colors"
+              >
+                LEARN MORE →
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

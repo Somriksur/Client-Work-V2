@@ -25,7 +25,7 @@ export function HeroSection() {
         if (heroHeading) setFormHeading(heroHeading.value);
         if (heroButton) setButtonText(heroButton.value);
       } catch (error) {
-        console.log('Using default content (not logged in or no content yet)');
+        // Silently use default content
       } finally {
         setIsLoading(false);
       }
@@ -35,11 +35,7 @@ export function HeroSection() {
   }, []);
 
   if (isLoading) {
-    return (
-      <section className="relative w-full h-96 flex items-center justify-center bg-gray-100">
-        <div className="text-gray-600">Loading...</div>
-      </section>
-    );
+    return null;
   }
 
   return (
@@ -87,9 +83,20 @@ export function HeroSection() {
           />
         </div>
         
-        {/* Form Overlay - Only on Desktop */}
+        {/* Form Overlay - Desktop */}
         <div className="hidden md:flex absolute top-0 right-0 w-full h-full items-start justify-end pt-2 sm:pt-3 md:pt-4 lg:pt-5 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-32 pointer-events-none">
           <div className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-[340px] pointer-events-auto mr-1 sm:mr-2 md:mr-3 lg:mr-4">
+            <UniversalForm 
+              formHeading={formHeading}
+              buttonText={buttonText}
+              pageId="home"
+            />
+          </div>
+        </div>
+        
+        {/* Form Overlay - Mobile */}
+        <div className="flex md:hidden absolute top-0 right-0 w-full h-full items-start justify-end pt-4 px-4 pointer-events-none">
+          <div className="w-full max-w-[280px] pointer-events-auto mr-2">
             <UniversalForm 
               formHeading={formHeading}
               buttonText={buttonText}
