@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { EditableSection } from '@/components/EditableSection';
 import { contentAPI } from '@/services/api';
-import whyChooseImage from '@/assets/home/home-004-why-choose-final.png';
+import whyChooseImageDesktop from '@/assets/home/home-004-why-choose-final.png';
+import whyChooseImageMobile from '@/assets/home/home-006-why-choose-mobile.png';
 
 export function WhyChooseSection() {
   const [activeNumber, setActiveNumber] = useState(1);
@@ -82,8 +83,9 @@ export function WhyChooseSection() {
       }}
     >
       <section className="relative bg-white">
-        <div className="relative">
-          <img src={whyChooseImage} alt="Why Businesses Choose Digital Advento" className="w-full block" />
+        {/* Desktop - with animated text overlay */}
+        <div className="hidden md:block relative">
+          <img src={whyChooseImageDesktop} alt="Why Businesses Choose Digital Advento" className="w-full block" />
           
           <div className="absolute top-[45%]" style={{ right: 'calc(20% - 30px)' }}>
             <div className="space-y-2 sm:space-y-3 md:space-y-4">
@@ -102,6 +104,11 @@ export function WhyChooseSection() {
               ))}
             </div>
           </div>
+        </div>
+        
+        {/* Mobile - static image with text in image */}
+        <div className="block md:hidden">
+          <img src={whyChooseImageMobile} alt="Why Businesses Choose Digital Advento" className="w-full block" />
         </div>
         
         <style dangerouslySetInnerHTML={{__html: `

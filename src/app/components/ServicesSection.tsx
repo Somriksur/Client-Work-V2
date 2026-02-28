@@ -1,4 +1,5 @@
-import servicesImage from '@/assets/home/home-003-services.png';
+import servicesImageDesktop from '@/assets/home/home-003-services.png';
+import servicesImageMobile from '@/assets/home/home-003-services-mobile.png';
 
 interface ServicesSectionProps {
   onNavigate?: (page: 'home' | 'services' | 'content-marketing' | 'google-ads' | 'meta-ads' | 'shopify' | 'social-media') => void;
@@ -55,9 +56,9 @@ export function ServicesSection({ onNavigate }: ServicesSectionProps) {
 
   return (
     <section className="relative bg-white">
-      {/* Background Image */}
-      <div className="relative">
-        <img src={servicesImage} alt="Our Services" className="w-full block" />
+      {/* Desktop Background Image */}
+      <div className="hidden md:block relative">
+        <img src={servicesImageDesktop} alt="Our Services" className="w-full block" />
         
         {/* Service Cards Overlay */}
         <div className="absolute inset-0">
@@ -151,6 +152,11 @@ export function ServicesSection({ onNavigate }: ServicesSectionProps) {
             </div>
           </div>
         </div>
+      </div>
+      
+      {/* Mobile Services Image */}
+      <div className="block md:hidden">
+        <img src={servicesImageMobile} alt="Our Services" className="w-full block" />
       </div>
     </section>
   );

@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { EditableSection } from '@/components/EditableSection';
 import { contentAPI } from '@/services/api';
-import faqImage from '@/assets/shared/shared-002-faq.png';
+import faqImageDesktop from '@/assets/shared/shared-002-faq.png';
+import faqImageMobile from '@/assets/home/home-010-faq-mobile.png';
 
 export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -104,35 +105,41 @@ export function FAQSection() {
       }}
     >
       <section className="relative w-full">
-        <img src={faqImage} alt="FAQ" className="w-full h-auto block" />
-        
-        <div className="absolute inset-0 flex items-center justify-end pr-8 md:pr-16 lg:pr-24">
-          <div className="w-full md:w-1/2 lg:w-2/5 p-6 md:p-8 lg:p-10">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 text-black">{heading}</h2>
-            <p className="text-black mb-6 md:mb-8 text-xs sm:text-sm md:text-base">{subheading}</p>
-            
-            <div className="space-y-2 md:space-y-3 lg:space-y-4">
-              {faqs.map((faq, index) => (
-                <div key={index} className="border-b border-gray-300">
-                  <button
-                    onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                    className="w-full py-3 md:py-4 flex justify-between items-center text-left hover:text-gray-700 transition-colors"
-                  >
-                    <span className="font-semibold pr-4 text-xs sm:text-sm md:text-base text-black">{faq.question}</span>
-                    <span className="text-lg sm:text-xl md:text-2xl font-light text-black flex-shrink-0">
-                      {openIndex === index ? '−' : '+'}
-                    </span>
-                  </button>
-                  {openIndex === index && (
-                    <div className="pb-3 md:pb-4 text-black text-xs sm:text-sm md:text-base">
-                      {faq.answer}
-                    </div>
-                  )}
-                </div>
-              ))}
+        {/* Desktop Image with Interactive FAQ */}
+        <div className="hidden md:block relative">
+          <img src={faqImageDesktop} alt="FAQ" className="w-full h-auto block" />
+          
+          <div className="absolute inset-0 flex items-center justify-end pr-8 md:pr-16 lg:pr-24">
+            <div className="w-full md:w-1/2 lg:w-2/5 p-6 md:p-8 lg:p-10">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 text-black">{heading}</h2>
+              <p className="text-black mb-6 md:mb-8 text-xs sm:text-sm md:text-base">{subheading}</p>
+              
+              <div className="space-y-2 md:space-y-3 lg:space-y-4">
+                {faqs.map((faq, index) => (
+                  <div key={index} className="border-b border-gray-300">
+                    <button
+                      onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                      className="w-full py-3 md:py-4 flex justify-between items-center text-left hover:text-gray-700 transition-colors"
+                    >
+                      <span className="font-semibold pr-4 text-xs sm:text-sm md:text-base text-black">{faq.question}</span>
+                      <span className="text-lg sm:text-xl md:text-2xl font-light text-black flex-shrink-0">
+                        {openIndex === index ? '−' : '+'}
+                      </span>
+                    </button>
+                    {openIndex === index && (
+                      <div className="pb-3 md:pb-4 text-black text-xs sm:text-sm md:text-base">
+                        {faq.answer}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
+        
+        {/* Mobile Image - Static with text baked in */}
+        <img src={faqImageMobile} alt="FAQ" className="block md:hidden w-full h-auto" />
       </section>
     </EditableSection>
   );

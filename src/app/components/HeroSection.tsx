@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import { EditableSection } from '@/components/EditableSection';
 import { contentAPI } from '@/services/api';
 import { UniversalForm } from '@/components/UniversalForm';
-import heroImage from '@/assets/home/home-001-hero-new.png';
+import heroImageDesktop from '@/assets/home/home-001-hero-new.png';
+import heroImageMobile from '@/assets/home/home-001-hero-mobile.png';
 
 export function HeroSection() {
   const [formHeading, setFormHeading] = useState('Talk To Our Expert');
@@ -66,16 +67,28 @@ export function HeroSection() {
       }}
     >
       <section className="relative w-full block m-0 p-0 leading-none">
-        <div className="w-full block m-0 p-0 leading-none" style={{ fontSize: 0 }}>
+        {/* Desktop Hero Image */}
+        <div className="hidden md:block w-full m-0 p-0 leading-none" style={{ fontSize: 0 }}>
           <img 
-            src={heroImage} 
+            src={heroImageDesktop} 
             alt="Build A Brand People Trust" 
             className="w-full h-auto block m-0 p-0 leading-none"
             style={{ verticalAlign: 'bottom', display: 'block' }}
           />
         </div>
         
-        <div className="absolute top-0 right-0 w-full h-full flex items-start justify-end pt-2 sm:pt-3 md:pt-4 lg:pt-5 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-32 pointer-events-none">
+        {/* Mobile Hero Image */}
+        <div className="block md:hidden w-full m-0 p-0 leading-none" style={{ fontSize: 0 }}>
+          <img 
+            src={heroImageMobile} 
+            alt="Build A Brand People Trust" 
+            className="w-full h-auto block m-0 p-0 leading-none"
+            style={{ verticalAlign: 'bottom', display: 'block' }}
+          />
+        </div>
+        
+        {/* Form Overlay - Only on Desktop */}
+        <div className="hidden md:flex absolute top-0 right-0 w-full h-full items-start justify-end pt-2 sm:pt-3 md:pt-4 lg:pt-5 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-32 pointer-events-none">
           <div className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-[340px] pointer-events-auto mr-1 sm:mr-2 md:mr-3 lg:mr-4">
             <UniversalForm 
               formHeading={formHeading}

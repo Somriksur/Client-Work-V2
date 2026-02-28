@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { EditableSection } from '@/components/EditableSection';
 import { contentAPI } from '@/services/api';
-import readyToGrowImage from '@/assets/shared/shared-003-ready-to-grow.png';
+import readyToGrowImageDesktop from '@/assets/shared/shared-003-ready-to-grow.png';
+import readyToGrowImageMobile from '@/assets/home/home-008-ready-to-grow-mobile.png';
 
 export function ReadyToGrowSection() {
   const [buttonText, setButtonText] = useState('Contact Us');
@@ -28,17 +29,35 @@ export function ReadyToGrowSection() {
 
   return (
     <section className="relative w-full">
+      {/* Desktop Image */}
       <img 
-        src={readyToGrowImage} 
+        src={readyToGrowImageDesktop} 
         alt="Ready To Grow? Talk To Our Experts" 
-        className="w-full h-auto block" 
+        className="hidden md:block w-full h-auto" 
       />
       
-      {/* Button Overlay - Centered at bottom */}
-      <div className="absolute inset-0 flex items-end justify-center pb-12 md:pb-16 lg:pb-20">
+      {/* Mobile Image */}
+      <img 
+        src={readyToGrowImageMobile} 
+        alt="Ready To Grow? Talk To Our Experts" 
+        className="block md:hidden w-full h-auto" 
+      />
+      
+      {/* Button Overlay - Centered at bottom - Desktop only */}
+      <div className="hidden md:flex absolute inset-0 items-end justify-center pb-12 md:pb-16 lg:pb-20">
         <button 
           onClick={handleButtonClick}
           className="bg-[#4A5FD9] hover:bg-[#3A4FC9] text-white font-semibold px-8 py-3 rounded-lg text-base md:text-lg transition-colors shadow-lg"
+        >
+          {buttonText}
+        </button>
+      </div>
+      
+      {/* Button for Mobile - positioned according to design */}
+      <div className="flex md:hidden absolute inset-0 items-end justify-center pb-8">
+        <button 
+          onClick={handleButtonClick}
+          className="bg-[#4A5FD9] hover:bg-[#3A4FC9] text-white font-semibold px-6 py-2.5 rounded-lg text-sm transition-colors shadow-lg"
         >
           {buttonText}
         </button>

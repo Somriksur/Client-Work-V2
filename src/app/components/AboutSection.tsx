@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { EditableSection } from '@/components/EditableSection';
 import { contentAPI } from '@/services/api';
-import aboutImage from '@/assets/home/home-002-about-new.png';
+import aboutImageDesktop from '@/assets/home/home-002-about-new.png';
+import aboutImageMobile from '@/assets/home/home-002-about-mobile.png';
 
 export function AboutSection() {
   const [heading, setHeading] = useState('About Us');
@@ -50,8 +51,9 @@ export function AboutSection() {
       }}
     >
       <section className="relative bg-white">
-        <div className="relative">
-          <img src={aboutImage} alt="About Us" className="w-full block" />
+        {/* Desktop About Image with Text Overlay */}
+        <div className="hidden md:block relative">
+          <img src={aboutImageDesktop} alt="About Us" className="w-full block" />
           
           <div className="absolute left-[5%] max-w-xl" style={{ top: '50px' }}>
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-black mb-4 sm:mb-6">
@@ -66,6 +68,11 @@ export function AboutSection() {
               {paragraph2}
             </p>
           </div>
+        </div>
+        
+        {/* Mobile About Image - Text is in the image */}
+        <div className="block md:hidden">
+          <img src={aboutImageMobile} alt="About Us" className="w-full block" />
         </div>
       </section>
     </EditableSection>
