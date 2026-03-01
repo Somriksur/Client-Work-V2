@@ -1,0 +1,94 @@
+import { useState, useEffect } from 'react';
+import { EditableSection } from '@/components/EditableSection';
+import { contentAPI } from '@/services/api';
+import aboutImageDesktop from '@/assets/home/home-002-about-new.png';
+import aboutImageMobile from '@/assets/home/home-002-about-mobile.png';
+
+export function AboutSection() {
+  const [heading, setHeading] = useState('About Us');
+  const [paragraph1, setParagraph1] = useState('We are a Trusted, performance-oriented digital marketing agency known for setting high standards in strategy, execution, and client satisfaction. Our focus is simple: Deliver exceptional results through creativity, innovation, and data-driven decisions.');
+  const [paragraph2, setParagraph2] = useState('As a leading digital marketing agency, we deeply analyze your goals, online presence, and competitors to craft data-driven strategies focused on sustainable business growth.');
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const loadContent = async () => {
+      try {
+        const content = await contentAPI.getPageContent('home');
+        const aboutHeading = content.find((c: any) => c.section === 'about' && c.key === 'heading');
+        const aboutP1 = content.find((c: any) => c.section === 'about' && c.key === 'paragraph1');
+        const aboutP2 = content.find((c: any) => c.section === 'about' && c.key === 'paragraph2');
+        
+        if (aboutHeading) setHeading(aboutHeading.value);
+        if (aboutP1) setParagraph1(aboutP1.value);
+        if (aboutP2) setParagraph2(aboutP2.value);
+      } catch (error) {
+        console.log('Using default content');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    loadContent();
+  }, []);
+
+  if (isLoading) {
+    return <section className="relative bg-white h-96 flex items-center justify-center"><div className="text-gray-600">Loading...</div></section>;
+  }
+
+  return (
+    <EditableSection
+      sectionId="about"
+      sectionName="About Section"
+      page="home"
+      fields={[
+        { key: 'heading', label: 'Heading', type: 'text', value: heading },
+        { key: 'paragraph1', label: 'First Paragraph', type: 'textarea', value: paragraph1 },
+        { key: 'paragraph2', label: 'Second Paragraph', type: 'textarea', value: paragraph2 }
+      ]}
+      onSave={(data) => {
+        setHeading(data.heading);
+        setParagraph1(data.paragraph1);
+        setParagraph2(data.paragraph2);
+      }}
+    >
+      <section className="relative bg-white">
+        {/* Desktop About Image with Text Overlay */}
+        <div className="hidden md:block relative">
+          <img src={aboutImageDesktop} alt="About Us" className="w-full block" />
+          
+          <div className="absolute left-[5%] max-w-xl" style={{ top: '50px' }}>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-800 mb-4 sm:mb-6">
+              {heading}
+            </h2>
+            
+            <p className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed mb-3">
+              We are a <span className="text-gray-800 font-semibold">Trusted, performance-oriented</span> digital marketing agency known for setting high standards in strategy, execution, and client satisfaction. Our focus is simple: <span className="text-gray-800 font-semibold">Deliver exceptional results through creativity, innovation, and data-driven decisions.</span>
+            </p>
+            
+            <p className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">
+              As a leading digital marketing agency, we deeply analyze your goals, online presence, and competitors to craft data-driven strategies focused on sustainable business growth.
+            </p>
+          </div>
+        </div>
+        
+        {/* Mobile About Image - Text is in the image */}
+        <div className="block md:hidden relative">
+          <img src={aboutImageMobile} alt="About Us" className="w-full block" />
+          
+          <div className="absolute left-0 right-0 px-6 pt-4" style={{ top: '50%' }}>
+            <h2 className="text-3xl font-bold text-gray-800 mb-5">
+              {heading}
+            </h2>
+            
+            <p className="text-base text-gray-700 leading-relaxed mb-4">
+              We are a <span className="text-gray-900 font-semibold">Trusted, performance-oriented</span> digital marketing agency known for setting high standards in strategy, execution, and client satisfaction. Our focus is simple: <span className="text-gray-900 font-semibold">Deliver exceptional results through creativity, innovation, and data-driven decisions.</span>
+            </p>
+            
+            <p className="text-base text-gray-700 leading-relaxed">
+              As a leading digital marketing agency, we deeply analyze your goals, online presence, and competitors to craft data-driven strategies focused on sustainable business growth.
+            </p>
+          </div>
+        </div>
+      </section>
+    </EditableSection>
+  );
+}
