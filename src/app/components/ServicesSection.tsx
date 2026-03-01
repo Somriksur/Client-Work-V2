@@ -1,5 +1,5 @@
 import servicesImageDesktop from '@/assets/home/home-003-services.png';
-import servicesImageMobile from '@/assets/home/home-003-services-mobile-new.png';
+import servicesImageMobile from '@/assets/home/home-003-services-mobile-bg.png';
 
 interface ServicesSectionProps {
   onNavigate?: (page: 'home' | 'services' | 'content-marketing' | 'google-ads' | 'meta-ads' | 'shopify' | 'social-media') => void;

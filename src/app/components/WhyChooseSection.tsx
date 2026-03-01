@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { EditableSection } from '@/components/EditableSection';
 import { contentAPI } from '@/services/api';
 import whyChooseImageDesktop from '@/assets/home/home-004-why-choose-final.png';
-import whyChooseImageMobile from '@/assets/home/home-006-why-choose-mobile.png';
+import whyChooseImageMobile from '@/assets/home/home-004-why-choose-mobile.png';
 
 export function WhyChooseSection() {
   const [activeNumber, setActiveNumber] = useState(1);
@@ -106,9 +106,28 @@ export function WhyChooseSection() {
           </div>
         </div>
         
-        {/* Mobile - static image with text in image */}
-        <div className="block md:hidden">
+        {/* Mobile - with animated text overlay */}
+        <div className="block md:hidden relative">
           <img src={whyChooseImageMobile} alt="Why Businesses Choose Digital Advento" className="w-full block" />
+          
+          {/* Animated text overlay for mobile */}
+          <div className="absolute left-[8%] right-[8%]" style={{ top: '45%' }}>
+            <div className="space-y-7">
+              {reasons.map((reason) => (
+                <div key={reason.number} className="flex items-center gap-4">
+                  <span className={`text-4xl font-bold transition-all duration-500 min-w-[40px] text-center ${activeNumber === reason.number ? 'text-yellow-500 scale-110 animate-pulse-glow' : 'text-gray-400'}`}>
+                    {reason.number}
+                  </span>
+                  
+                  <div className={`w-0.5 h-10 transition-all duration-500 ${activeNumber === reason.number ? 'bg-yellow-500 shadow-glow' : 'bg-gray-500'}`} />
+                  
+                  <span className={`text-lg font-semibold transition-all duration-500 ${activeNumber === reason.number ? 'text-yellow-500 animate-color-shift' : 'text-white'}`}>
+                    {reason.text}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
         
         <style dangerouslySetInnerHTML={{__html: `

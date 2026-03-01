@@ -141,6 +141,18 @@
     max-width: 100%;
     height: auto;
     vertical-align: middle;
+    /* Prevent image dragging and selection */
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    pointer-events: none;
+  }
+  
+  /* Allow pointer events on interactive elements inside sections */
+  button, a, input, textarea, select {
+    pointer-events: auto;
   }
 
   /* Mobile-first responsive container */
