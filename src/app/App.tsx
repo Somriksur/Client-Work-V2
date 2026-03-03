@@ -19,12 +19,13 @@ import { GoogleAdsPage } from './services/google-ads/GoogleAdsPage';
 import { MetaAdsPage } from './services/meta-ads/MetaAdsPage';
 import { ShopifyPage } from './services/shopify/ShopifyPage';
 import { SocialMediaPage } from './services/social-media/SocialMediaPage';
+import { BuildABrandPage } from './services/build-a-brand/BuildABrandPage';
 import { AdminProvider, useAdmin } from '../contexts/AdminContext';
 import { AdminToolbar } from '../components/AdminToolbar';
 import { AdminLogin } from '../components/AdminLogin';
 
 function AppContent() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'services' | 'content-marketing' | 'google-ads' | 'meta-ads' | 'shopify' | 'social-media' | 'admin-login'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'services' | 'content-marketing' | 'google-ads' | 'meta-ads' | 'shopify' | 'social-media' | 'build-a-brand' | 'admin-login'>('home');
   const { isAdmin } = useAdmin();
 
   // Check URL hash for admin login
@@ -113,6 +114,18 @@ function AppContent() {
         <div className="min-h-screen bg-white m-0 p-0" style={isAdmin ? { paddingTop: '48px' } : {}}>
           <Header onNavigate={setCurrentPage} />
           <SocialMediaPage />
+        </div>
+      </>
+    );
+  }
+
+  if (currentPage === 'build-a-brand') {
+    return (
+      <>
+        <AdminToolbar />
+        <div className="min-h-screen bg-white m-0 p-0" style={isAdmin ? { paddingTop: '48px' } : {}}>
+          <Header onNavigate={setCurrentPage} />
+          <BuildABrandPage />
         </div>
       </>
     );

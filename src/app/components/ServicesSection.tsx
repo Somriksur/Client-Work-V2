@@ -2,7 +2,7 @@ import servicesImageDesktop from '@/assets/home/home-003-services.png';
 import servicesImageMobile from '@/assets/home/home-003-services-mobile-bg.png';
 
 interface ServicesSectionProps {
-  onNavigate?: (page: 'home' | 'services' | 'content-marketing' | 'google-ads' | 'meta-ads' | 'shopify' | 'social-media') => void;
+  onNavigate?: (page: 'home' | 'services' | 'content-marketing' | 'google-ads' | 'meta-ads' | 'shopify' | 'social-media' | 'build-a-brand') => void;
 }
 
 export function ServicesSection({ onNavigate }: ServicesSectionProps) {
@@ -45,7 +45,7 @@ export function ServicesSection({ onNavigate }: ServicesSectionProps) {
     {
       id: 'branding',
       title: 'Branding & Digital PR',
-      page: 'services' as const,
+      page: 'build-a-brand' as const,
     },
   ];
 

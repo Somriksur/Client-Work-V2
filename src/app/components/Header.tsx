@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 import logo from '@/assets/shared/logo.png';
 
 interface HeaderProps {
-  onNavigate?: (page: 'home' | 'services' | 'content-marketing' | 'google-ads' | 'meta-ads' | 'shopify' | 'social-media') => void;
+  onNavigate?: (page: 'home' | 'services' | 'content-marketing' | 'google-ads' | 'meta-ads' | 'shopify' | 'social-media' | 'build-a-brand') => void;
 }
 
 export function Header({ onNavigate }: HeaderProps) {
@@ -67,7 +67,7 @@ export function Header({ onNavigate }: HeaderProps) {
               {servicesDropdownOpen && (
                 <div className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-lg py-2 min-w-[220px] z-50 border border-gray-100">
                   <button
-                    onClick={() => handleServiceClick('services')}
+                    onClick={() => handleServiceClick('build-a-brand')}
                     className="w-full text-left px-4 py-2 text-sm text-[#1E3A5F] hover:bg-gray-100 hover:text-[#4A90E2] transition-colors"
                   >
                     Branding & PR
@@ -153,7 +153,7 @@ export function Header({ onNavigate }: HeaderProps) {
                 <div className="pl-4 flex flex-col gap-2">
                   <div
                     onClick={() => {
-                      if (onNavigate) onNavigate('services');
+                      if (onNavigate) onNavigate('build-a-brand');
                       setMobileMenuOpen(false);
                     }}
                     className="text-[#1E3A5F] hover:text-[#4A90E2] py-1 cursor-pointer"
