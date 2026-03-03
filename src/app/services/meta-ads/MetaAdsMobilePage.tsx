@@ -1,20 +1,20 @@
+import heroMobileImage from '@/assets/services/meta-ads/hero-mobile.png';
+import section01 from '@/assets/services/meta-ads/section-01.png';
+import section02 from '@/assets/services/meta-ads/section-02.png';
+import section03 from '@/assets/services/meta-ads/section-03.png';
+import section04 from '@/assets/services/meta-ads/section-04.png';
+import section05 from '@/assets/services/meta-ads/section-05.png';
+import section06 from '@/assets/services/meta-ads/section-06.png';
+import section07 from '@/assets/services/meta-ads/section-07.png';
+import section08 from '@/assets/services/meta-ads/section-08.png';
+import whatWeFocusOn from '@/assets/services/meta-ads/what-we-focus-on.png';
+import faqImage from '@/assets/services/meta-ads/faq-mobile.png';
 import { UniversalFormMobile } from '@/components/UniversalFormMobile';
 import { Footer } from '../../components/Footer';
 import { Check } from 'lucide-react';
-import heroImage from '@/assets/services/content-marketing/hero-mobile.png';
-import afterHero from '@/assets/services/content-marketing/after-hero-section.png';
-import section01 from '@/assets/services/content-marketing/section-01.png';
-import section02 from '@/assets/services/content-marketing/section-02.png';
-import section03 from '@/assets/services/content-marketing/section-03.png';
-import section04 from '@/assets/services/content-marketing/section-04.png';
-import section05 from '@/assets/services/content-marketing/section-05.png';
-import section06 from '@/assets/services/content-marketing/section-06.png';
-import section07 from '@/assets/services/content-marketing/section-07.png';
-import section08 from '@/assets/services/content-marketing/section-08.png';
-import faqImage from '@/assets/services/content-marketing/faq-mobile.png';
 import { useState } from 'react';
 
-export function ContentMarketingMobilePage() {
+export function MetaAdsMobilePage() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const faqs = [
@@ -42,12 +42,12 @@ export function ContentMarketingMobilePage() {
 
   return (
     <div className="w-full bg-white overflow-x-hidden">
-      {/* Hero Section */}
+      {/* Hero Section with Form Overlay */}
       <section className="relative w-full block m-0 p-0 leading-none">
         <div className="w-full block m-0 p-0 leading-none" style={{ fontSize: 0 }}>
           <img 
-            src={heroImage} 
-            alt="Content Marketing Services" 
+            src={heroMobileImage} 
+            alt="Meta Ads Services" 
             className="w-full h-auto block m-0 p-0 leading-none"
             style={{ verticalAlign: 'bottom', display: 'block' }}
           />
@@ -59,84 +59,28 @@ export function ContentMarketingMobilePage() {
             <UniversalFormMobile 
               formHeading="Talk To Our Expert"
               buttonText="GET STARTED NOW"
-              pageId="content-marketing"
+              pageId="meta-ads"
             />
           </div>
         </div>
       </section>
 
       {/* After Hero Section */}
-      <section className="relative bg-white">
-        <img src={afterHero} alt="Content Marketing Section" className="w-full block" />
-        
-        {/* Text Overlay */}
-        <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center px-6 pt-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-5">
-            Content Channels We Work With
-          </h2>
-          
-          <p className="text-base text-gray-700 text-center mb-7 leading-relaxed">
-            We create content across formats that support both visibility and conversions:
-          </p>
-          
-          <div className="w-full max-w-[340px] space-y-4 mb-7">
-            <div className="flex items-center gap-3">
-              <div className="w-7 h-7 rounded-full bg-white border-2 border-green-500 flex items-center justify-center flex-shrink-0">
-                <Check className="w-4 h-4 text-green-500 stroke-[3]" />
-              </div>
-              <span className="text-base text-gray-800 font-medium">Website Content</span>
-            </div>
-            
-            <div className="flex items-center gap-3">
-              <div className="w-7 h-7 rounded-full bg-white border-2 border-green-500 flex items-center justify-center flex-shrink-0">
-                <Check className="w-4 h-4 text-green-500 stroke-[3]" />
-              </div>
-              <span className="text-base text-gray-800 font-medium">Blogs & Long-Form Articles</span>
-            </div>
-            
-            <div className="flex items-center gap-3">
-              <div className="w-7 h-7 rounded-full bg-white border-2 border-green-500 flex items-center justify-center flex-shrink-0">
-                <Check className="w-4 h-4 text-green-500 stroke-[3]" />
-              </div>
-              <span className="text-base text-gray-800 font-medium">SEO Content</span>
-            </div>
-            
-            <div className="flex items-center gap-3">
-              <div className="w-7 h-7 rounded-full bg-white border-2 border-green-500 flex items-center justify-center flex-shrink-0">
-                <Check className="w-4 h-4 text-green-500 stroke-[3]" />
-              </div>
-              <span className="text-base text-gray-800 font-medium">Social Media Content</span>
-            </div>
-            
-            <div className="flex items-center gap-3">
-              <div className="w-7 h-7 rounded-full bg-white border-2 border-green-500 flex items-center justify-center flex-shrink-0">
-                <Check className="w-4 h-4 text-green-500 stroke-[3]" />
-              </div>
-              <span className="text-base text-gray-800 font-medium">Scripts (Video, Reels, Ads)</span>
-            </div>
-            
-            <div className="flex items-center gap-3">
-              <div className="w-7 h-7 rounded-full bg-white border-2 border-green-500 flex items-center justify-center flex-shrink-0">
-                <Check className="w-4 h-4 text-green-500 stroke-[3]" />
-              </div>
-              <span className="text-base text-gray-800 font-medium">Guides, PDFs & Lead Magnets</span>
-            </div>
-          </div>
-          
-          <p className="text-sm text-gray-600 text-center leading-relaxed">
-            Each format serves a clear purpose in your funnel.
-          </p>
-        </div>
+      <section className="bg-white py-8 px-6">
+        <h2 className="text-3xl font-bold text-gray-900 text-center mb-4">
+          Our Meta Ads Process
+        </h2>
+        <p className="text-base text-gray-700 text-center leading-relaxed">
+          Everything needed to run effective Facebook & Instagram ad campaigns.
+        </p>
       </section>
 
       {/* Section 01 */}
-      <section className="relative bg-white">
-        <img src={section01} alt="Content Marketing Section" className="w-full block" />
-        
-        {/* Text Overlay */}
-        <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center px-6 pt-2">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-7">
-            Content Strategy & Planning
+      <section className="bg-white">
+        {/* Text Above Image */}
+        <div className="flex flex-col items-center px-6 py-6 bg-white">
+          <h2 className="text-3xl font-bold text-gray-900 text-center mb-6">
+            Meta Ads Strategy
           </h2>
           
           <div className="w-full max-w-[340px] space-y-4">
@@ -144,27 +88,27 @@ export function ContentMarketingMobilePage() {
               <div className="w-7 h-7 rounded-full bg-white border-2 border-green-500 flex items-center justify-center flex-shrink-0">
                 <Check className="w-4 h-4 text-green-500 stroke-[3]" />
               </div>
-              <span className="text-base text-gray-900 font-medium">Content mapped to business goals</span>
+              <span className="text-base text-gray-900 font-medium">Clear campaign structure based on your goal</span>
             </div>
             
             <div className="flex items-center gap-3">
               <div className="w-7 h-7 rounded-full bg-white border-2 border-green-500 flex items-center justify-center flex-shrink-0">
                 <Check className="w-4 h-4 text-green-500 stroke-[3]" />
               </div>
-              <span className="text-base text-gray-900 font-medium">Topics planned around audience intent</span>
+              <span className="text-base text-gray-900 font-medium">Smart budget planning for better ROI</span>
             </div>
           </div>
         </div>
+        
+        <img src={section01} alt="Section 01" className="w-full block" />
       </section>
 
       {/* Section 02 */}
-      <section className="relative bg-white">
-        <img src={section02} alt="Content Marketing Section" className="w-full block" />
-        
-        {/* Text Overlay */}
-        <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center px-6 pt-6">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-7">
-            SEO Content Creation
+      <section className="bg-white">
+        {/* Text Above Image */}
+        <div className="flex flex-col items-center px-6 py-6 bg-white">
+          <h2 className="text-3xl font-bold text-gray-900 text-center mb-6">
+            Audience Targeting & Retargeting
           </h2>
           
           <div className="w-full max-w-[340px] space-y-4">
@@ -172,27 +116,27 @@ export function ContentMarketingMobilePage() {
               <div className="w-7 h-7 rounded-full bg-white border-2 border-green-500 flex items-center justify-center flex-shrink-0">
                 <Check className="w-4 h-4 text-green-500 stroke-[3]" />
               </div>
-              <span className="text-base text-gray-900 font-medium">Search-focused, Google-safe writing</span>
+              <span className="text-base text-gray-900 font-medium">Reach high-intent and relevant users</span>
             </div>
             
             <div className="flex items-center gap-3">
               <div className="w-7 h-7 rounded-full bg-white border-2 border-green-500 flex items-center justify-center flex-shrink-0">
                 <Check className="w-4 h-4 text-green-500 stroke-[3]" />
               </div>
-              <span className="text-base text-gray-900 font-medium">Optimized structure and readability</span>
+              <span className="text-base text-gray-900 font-medium">Retarget visitors to improve conversions</span>
             </div>
           </div>
         </div>
+        
+        <img src={section02} alt="Section 02" className="w-full block" />
       </section>
 
       {/* Section 03 */}
-      <section className="relative bg-white">
-        <img src={section03} alt="Content Marketing Section" className="w-full block" />
-        
-        {/* Text Overlay */}
-        <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center px-6 pt-2">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-7">
-            Website & Landing Page Content
+      <section className="bg-white">
+        {/* Text Above Image */}
+        <div className="flex flex-col items-center px-6 py-6 bg-white">
+          <h2 className="text-3xl font-bold text-gray-900 text-center mb-6">
+            Ad Creatives & Copy
           </h2>
           
           <div className="w-full max-w-[340px] space-y-4">
@@ -200,27 +144,27 @@ export function ContentMarketingMobilePage() {
               <div className="w-7 h-7 rounded-full bg-white border-2 border-green-500 flex items-center justify-center flex-shrink-0">
                 <Check className="w-4 h-4 text-green-500 stroke-[3]" />
               </div>
-              <span className="text-base text-gray-900 font-medium">Clear messaging and value positioning</span>
+              <span className="text-base text-gray-900 font-medium">Clean, scroll-stopping ad visuals</span>
             </div>
             
             <div className="flex items-center gap-3">
               <div className="w-7 h-7 rounded-full bg-white border-2 border-green-500 flex items-center justify-center flex-shrink-0">
                 <Check className="w-4 h-4 text-green-500 stroke-[3]" />
               </div>
-              <span className="text-base text-gray-900 font-medium">Content designed to convert visitors</span>
+              <span className="text-base text-gray-900 font-medium">Clear messaging that drives action</span>
             </div>
           </div>
         </div>
+        
+        <img src={section03} alt="Section 03" className="w-full block" />
       </section>
 
       {/* Section 04 */}
-      <section className="relative bg-white">
-        <img src={section04} alt="Content Marketing Section" className="w-full block" />
-        
-        {/* Text Overlay */}
-        <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center px-6 pt-1">
+      <section className="bg-white">
+        {/* Text Above Image */}
+        <div className="flex flex-col items-center px-6 py-6 bg-white">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-6">
-            Blog & Thought Leadership
+            Funnel & Landing Page Guidance
           </h2>
           
           <div className="w-full max-w-[340px] space-y-4">
@@ -228,27 +172,27 @@ export function ContentMarketingMobilePage() {
               <div className="w-7 h-7 rounded-full bg-white border-2 border-green-500 flex items-center justify-center flex-shrink-0">
                 <Check className="w-4 h-4 text-green-500 stroke-[3]" />
               </div>
-              <span className="text-base text-gray-900 font-medium">Authority-building long-form content</span>
+              <span className="text-base text-gray-900 font-medium">Ads matched with page intent</span>
             </div>
             
             <div className="flex items-center gap-3">
               <div className="w-7 h-7 rounded-full bg-white border-2 border-green-500 flex items-center justify-center flex-shrink-0">
                 <Check className="w-4 h-4 text-green-500 stroke-[3]" />
               </div>
-              <span className="text-base text-gray-900 font-medium">Consistent publishing for growth</span>
+              <span className="text-base text-gray-900 font-medium">Better Quality Score & lower CPC</span>
             </div>
           </div>
         </div>
+        
+        <img src={section04} alt="Section 04" className="w-full block" />
       </section>
 
       {/* Section 05 */}
-      <section className="relative bg-white">
-        <img src={section05} alt="Content Marketing Section" className="w-full block" />
-        
-        {/* Text Overlay */}
-        <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center px-6 pt-4">
+      <section className="bg-white">
+        {/* Text Above Image */}
+        <div className="flex flex-col items-center px-6 py-6 bg-white">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-6">
-            Content Optimization & Refresh
+            Conversion Tracking Setup
           </h2>
           
           <div className="w-full max-w-[340px] space-y-4">
@@ -256,67 +200,96 @@ export function ContentMarketingMobilePage() {
               <div className="w-7 h-7 rounded-full bg-white border-2 border-green-500 flex items-center justify-center flex-shrink-0">
                 <Check className="w-4 h-4 text-green-500 stroke-[3]" />
               </div>
-              <span className="text-base text-gray-900 font-medium">Improve existing content performance</span>
+              <span className="text-base text-gray-900 font-medium">Accurate tracking for leads & sales</span>
             </div>
             
             <div className="flex items-center gap-3">
               <div className="w-7 h-7 rounded-full bg-white border-2 border-green-500 flex items-center justify-center flex-shrink-0">
                 <Check className="w-4 h-4 text-green-500 stroke-[3]" />
               </div>
-              <span className="text-base text-gray-900 font-medium">Update content to stay relevant</span>
+              <span className="text-base text-gray-900 font-medium">Clean data for real decisions</span>
             </div>
           </div>
         </div>
+        
+        <img src={section05} alt="Section 05" className="w-full block" />
       </section>
 
       {/* Section 06 */}
-      <section className="relative bg-white">
-        <img src={section06} alt="Content Marketing Section" className="w-full block" />
-        
-        {/* Text Overlay */}
-        <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center px-6 pt-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-4">
-            What We Focus On
+      <section className="bg-white">
+        {/* Text Above Image */}
+        <div className="flex flex-col items-center px-6 py-6 bg-white">
+          <h2 className="text-3xl font-bold text-gray-900 text-center mb-6">
+            Optimization & Scaling
           </h2>
-          
-          <p className="text-sm text-gray-700 text-center mb-6 leading-relaxed max-w-[340px]">
-            We don't create content for volume. We create content that works.
-          </p>
           
           <div className="w-full max-w-[340px] space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-7 h-7 rounded-full bg-white border-2 border-green-500 flex items-center justify-center flex-shrink-0">
                 <Check className="w-4 h-4 text-green-500 stroke-[3]" />
               </div>
-              <span className="text-base text-gray-900 font-medium">Audience relevance</span>
+              <span className="text-base text-gray-900 font-medium">Continuous bid & keyword optimization</span>
             </div>
             
             <div className="flex items-center gap-3">
               <div className="w-7 h-7 rounded-full bg-white border-2 border-green-500 flex items-center justify-center flex-shrink-0">
                 <Check className="w-4 h-4 text-green-500 stroke-[3]" />
               </div>
-              <span className="text-base text-gray-900 font-medium">Search visibility</span>
+              <span className="text-base text-gray-900 font-medium">Scale profitable campaigns safely</span>
+            </div>
+          </div>
+        </div>
+        
+        <img src={section06} alt="Section 06" className="w-full block" />
+      </section>
+
+      {/* What We Focus On Section */}
+      <section className="relative bg-white">
+        <img src={whatWeFocusOn} alt="What We Focus On" className="w-full block" />
+        
+        {/* Text Overlay */}
+        <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center px-6 pt-16">
+          <h2 className="text-3xl font-bold text-gray-900 text-center mb-2">
+            What We Focus On
+          </h2>
+          <p className="text-sm text-gray-700 text-center mb-6 max-w-[340px]">
+            We don't run ads for impressions alone. We focus on outcomes that matter.
+          </p>
+          
+          <div className="w-full max-w-[340px] space-y-3">
+            <div className="flex items-center gap-3">
+              <div className="w-7 h-7 rounded-full bg-white border-2 border-green-500 flex items-center justify-center flex-shrink-0">
+                <Check className="w-4 h-4 text-green-500 stroke-[3]" />
+              </div>
+              <span className="text-base text-gray-900 font-medium">Qualified leads</span>
             </div>
             
             <div className="flex items-center gap-3">
               <div className="w-7 h-7 rounded-full bg-white border-2 border-green-500 flex items-center justify-center flex-shrink-0">
                 <Check className="w-4 h-4 text-green-500 stroke-[3]" />
               </div>
-              <span className="text-base text-gray-900 font-medium">Brand trust & authority</span>
+              <span className="text-base text-gray-900 font-medium">Sales & inquiries</span>
             </div>
             
             <div className="flex items-center gap-3">
               <div className="w-7 h-7 rounded-full bg-white border-2 border-green-500 flex items-center justify-center flex-shrink-0">
                 <Check className="w-4 h-4 text-green-500 stroke-[3]" />
               </div>
-              <span className="text-base text-gray-900 font-medium">Lead support & conversion</span>
+              <span className="text-base text-gray-900 font-medium">Lower cost per result</span>
             </div>
             
             <div className="flex items-center gap-3">
               <div className="w-7 h-7 rounded-full bg-white border-2 border-green-500 flex items-center justify-center flex-shrink-0">
                 <Check className="w-4 h-4 text-green-500 stroke-[3]" />
               </div>
-              <span className="text-base text-gray-900 font-medium">Long-term performance</span>
+              <span className="text-base text-gray-900 font-medium">Consistent performance</span>
+            </div>
+            
+            <div className="flex items-center gap-3">
+              <div className="w-7 h-7 rounded-full bg-white border-2 border-green-500 flex items-center justify-center flex-shrink-0">
+                <Check className="w-4 h-4 text-green-500 stroke-[3]" />
+              </div>
+              <span className="text-base text-gray-900 font-medium">Scalable growth</span>
             </div>
           </div>
         </div>
@@ -324,12 +297,12 @@ export function ContentMarketingMobilePage() {
 
       {/* Section 07 */}
       <section className="bg-white">
-        <img src={section07} alt="Content Marketing Section" className="w-full block" />
+        <img src={section07} alt="Section 07" className="w-full block" />
       </section>
 
       {/* Section 08 with Button */}
       <section className="relative bg-white">
-        <img src={section08} alt="Content Marketing Section" className="w-full block" />
+        <img src={section08} alt="Ready to Grow" className="w-full block" />
         
         {/* Button Overlay */}
         <div className="absolute inset-0 flex items-center justify-center pt-40">
@@ -337,7 +310,7 @@ export function ContentMarketingMobilePage() {
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="bg-blue-900 text-white px-6 py-2 rounded-lg font-bold text-xs hover:bg-blue-800 transition-colors flex items-center gap-2"
           >
-            BOOK A FREE CONTENT MARKETING CONSULTATION
+            BOOK A FREE META ADS CONSULTATION
             <span className="text-lg">→</span>
           </button>
         </div>
@@ -345,7 +318,7 @@ export function ContentMarketingMobilePage() {
 
       {/* FAQ Section */}
       <section className="relative bg-white">
-        <img src={faqImage} alt="Content Marketing FAQ" className="w-full block" />
+        <img src={faqImage} alt="Meta Ads FAQ" className="w-full block" />
         
         {/* FAQ Overlay */}
         <div className="absolute left-0 right-0 px-6" style={{ top: '38%' }}>

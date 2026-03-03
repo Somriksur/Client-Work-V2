@@ -39,6 +39,21 @@ export function Header({ onNavigate }: HeaderProps) {
     }
   };
 
+  const handleAboutClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (onNavigate) {
+      onNavigate('home');
+      setMobileMenuOpen(false);
+      // Scroll to about section after a short delay to ensure page has loaded
+      setTimeout(() => {
+        const aboutSection = document.getElementById('about');
+        if (aboutSection) {
+          aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  };
+
   return (
     <header className="bg-white border-b">
       <div className="container mx-auto px-4">
@@ -106,7 +121,7 @@ export function Header({ onNavigate }: HeaderProps) {
               )}
             </div>
             
-            <a href="#" className="text-[#1E3A5F] hover:text-[#4A90E2] text-sm xl:text-base">About</a>
+            <a href="#" onClick={handleAboutClick} className="text-[#1E3A5F] hover:text-[#4A90E2] text-sm xl:text-base">About</a>
             <a href="#" className="text-[#1E3A5F] hover:text-[#4A90E2] text-sm xl:text-base">Blog</a>
             <a href="#" className="text-[#1E3A5F] hover:text-[#4A90E2] text-sm xl:text-base">Contact</a>
           </nav>
@@ -209,7 +224,7 @@ export function Header({ onNavigate }: HeaderProps) {
               </div>
               
               {/* Other Links */}
-              <div className="text-[#1E3A5F] hover:text-[#4A90E2] py-2 cursor-pointer">About</div>
+              <div onClick={handleAboutClick} className="text-[#1E3A5F] hover:text-[#4A90E2] py-2 cursor-pointer">About</div>
               <div className="text-[#1E3A5F] hover:text-[#4A90E2] py-2 cursor-pointer">Blog</div>
               <div className="text-[#1E3A5F] hover:text-[#4A90E2] py-2 cursor-pointer">Contact</div>
               

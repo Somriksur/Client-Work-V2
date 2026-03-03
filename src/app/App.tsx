@@ -51,7 +51,7 @@ function AppContent() {
     return (
       <>
         <AdminToolbar />
-        <div className="min-h-screen bg-white m-0 p-0" style={isAdmin ? { paddingTop: '48px' } : {}}>
+        <div className="min-h-screen bg-white m-0 p-0 overflow-x-hidden" style={isAdmin ? { paddingTop: '48px' } : {}}>
           <Header onNavigate={setCurrentPage} />
           <ServicesPage />
         </div>
@@ -63,7 +63,7 @@ function AppContent() {
     return (
       <>
         <AdminToolbar />
-        <div className="min-h-screen bg-white m-0 p-0" style={isAdmin ? { paddingTop: '48px' } : {}}>
+        <div className="min-h-screen bg-white m-0 p-0 overflow-x-hidden" style={isAdmin ? { paddingTop: '48px' } : {}}>
           <Header onNavigate={setCurrentPage} />
           <ContentMarketingPage />
         </div>
@@ -75,7 +75,7 @@ function AppContent() {
     return (
       <>
         <AdminToolbar />
-        <div className="min-h-screen bg-white m-0 p-0" style={isAdmin ? { paddingTop: '48px' } : {}}>
+        <div className="min-h-screen bg-white m-0 p-0 overflow-x-hidden" style={isAdmin ? { paddingTop: '48px' } : {}}>
           <Header onNavigate={setCurrentPage} />
           <GoogleAdsPage />
         </div>
@@ -87,7 +87,7 @@ function AppContent() {
     return (
       <>
         <AdminToolbar />
-        <div className="min-h-screen bg-white m-0 p-0" style={isAdmin ? { paddingTop: '48px' } : {}}>
+        <div className="min-h-screen bg-white m-0 p-0 overflow-x-hidden" style={isAdmin ? { paddingTop: '48px' } : {}}>
           <Header onNavigate={setCurrentPage} />
           <MetaAdsPage />
         </div>
@@ -99,7 +99,7 @@ function AppContent() {
     return (
       <>
         <AdminToolbar />
-        <div className="min-h-screen bg-white m-0 p-0" style={isAdmin ? { paddingTop: '48px' } : {}}>
+        <div className="min-h-screen bg-white m-0 p-0 overflow-x-hidden" style={isAdmin ? { paddingTop: '48px' } : {}}>
           <Header onNavigate={setCurrentPage} />
           <ShopifyPage />
         </div>
@@ -111,7 +111,7 @@ function AppContent() {
     return (
       <>
         <AdminToolbar />
-        <div className="min-h-screen bg-white m-0 p-0" style={isAdmin ? { paddingTop: '48px' } : {}}>
+        <div className="min-h-screen bg-white m-0 p-0 overflow-x-hidden" style={isAdmin ? { paddingTop: '48px' } : {}}>
           <Header onNavigate={setCurrentPage} />
           <SocialMediaPage />
         </div>
@@ -123,7 +123,7 @@ function AppContent() {
     return (
       <>
         <AdminToolbar />
-        <div className="min-h-screen bg-white m-0 p-0" style={isAdmin ? { paddingTop: '48px' } : {}}>
+        <div className="min-h-screen bg-white m-0 p-0 overflow-x-hidden" style={isAdmin ? { paddingTop: '48px' } : {}}>
           <Header onNavigate={setCurrentPage} />
           <BuildABrandPage />
         </div>
@@ -134,7 +134,7 @@ function AppContent() {
   return (
     <>
       <AdminToolbar />
-      <div className="min-h-screen bg-white m-0 p-0" style={isAdmin ? { paddingTop: '48px' } : {}}>
+      <div className="min-h-screen bg-white m-0 p-0 overflow-x-hidden" style={isAdmin ? { paddingTop: '48px' } : {}}>
         <Header onNavigate={setCurrentPage} />
         <HeroSection />
         <MarqueeSection />
